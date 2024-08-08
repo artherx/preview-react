@@ -35,7 +35,7 @@ function App() {
       const dataArray: Float32Array = analyser.getValue() as Float32Array;
 
       const line = d3.line<number>()
-        .x((d, i) => xScale(i))
+        .x((_d, i) => xScale(i))
         .y(d => yScale(d as number))
         .curve(d3.curveBasis);
 

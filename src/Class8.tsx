@@ -11,7 +11,7 @@ export default function Class8() {
     return (
         < >
             <input></input>
-            <button onClick={() => Tone.start()}>asdasd</button>
+            <button onClick={(toque)}>asdasd</button>
         </ >
     );
 }
