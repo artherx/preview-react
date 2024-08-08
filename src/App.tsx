@@ -21,18 +21,18 @@ function App() {
     visualize(analyser);
   }
   
-  function visualize(analyser: Tone.Analyser, tam?:number = 1024) {
+  function visualize(analyser: Tone.Analyser) {
     const svg = d3.select(svgRef.current);
     const width = +svg.attr('width');
     const height = +svg.attr('height');
 
     svg.selectAll('*').remove(); // Clear previous visualization
 
-    const xScale = d3.scaleLinear().domain([0, tam]).range([0, width]);
+    const xScale = d3.scaleLinear().domain([0, 1024]).range([0, width]);
     const yScale = d3.scaleLinear().domain([-1, 1]).range([height, 0]);
 
     function draw() {
-      const dataArray = analyser.getValue();
+      const dataArray: Float32Array = analyser.getValue() as Float32Array;
 
       const line = d3.line<number>()
         .x((d, i) => xScale(i))
