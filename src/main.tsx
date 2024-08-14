@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
+
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import App from './pages/App'
 import Tabajo2 from './pages/Tabajo'
@@ -21,8 +22,11 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-
+    <div className='bg-gray-900 min-h-screen'>
     <RouterProvider router={router}/>
+
+    </div>
+
 
   </React.StrictMode>,
 )

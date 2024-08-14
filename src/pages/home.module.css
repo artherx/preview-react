@@ -1,0 +1,9 @@
+.link {
+    @apply font-medium hover:text-blue-300;
+}
+.button {
+    @apply font-medium bg-slate-300 hover:bg-slate-400 px-5 py-2 rounded-md;
+}
+.intup{
+    @apply font-medium px-5 py-2 rounded-md
+}

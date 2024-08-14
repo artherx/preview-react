@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-
+import styles from './home.module.css'
 export default function Home() {
     return (
         <>
-            <header style={{ display: 'flex', gap:'100px' }}>
-                <Link to="/">Home</Link>
-                <Link to="/app">APP</Link>
-                <Link to="/trabajo">Trabajo</Link>
+            <header className="bg-gray-800 text-white flex flex-row justify-evenly h-10 items-center">
+                <Link to="/" className={`${styles.link}`}>Home</Link>
+                <Link to="/app" className={`${styles.link}`}>APP</Link>
+                <Link to="/trabajo" className={`${styles.link}`}>Trabajo</Link>
             </header>
         </>
     );

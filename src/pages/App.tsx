@@ -1,6 +1,7 @@
 import { ChangeEvent, useRef, useState } from 'react';
 import './App.css';
 import * as Tone from 'tone';
+import styles from './home.module.css'
 
 import * as d3 from 'd3';
 import Home from './Home';
@@ -63,18 +64,18 @@ function App() {
   return (
     <>
 
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-        <Home />
+      <Home />
+      <div className='flex flex-col items-center justify-evenly h-screen'>
         {numeros.map((numero, index) => (
           <div key={index}>
-            <input
+            <input className={`${styles.intup}`}
               type="number"
               value={numero}
               onChange={handleChange(index)}
             />
           </div>
         ))}
-        <button onClick={toque}>Click</button>
+        <button onClick={toque} className={`${styles.button}`}>Click</button>
         <svg ref={svgRef} width="800" height="400"></svg>
       </div>
     </>
