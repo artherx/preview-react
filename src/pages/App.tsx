@@ -1,7 +1,9 @@
-import  { ChangeEvent, useRef, useState } from 'react';
+import { ChangeEvent, useRef, useState } from 'react';
 import './App.css';
 import * as Tone from 'tone';
+
 import * as d3 from 'd3';
+import Home from './Home';
 
 function App() {
   const svgRef = useRef<SVGSVGElement | null>(null);
@@ -12,15 +14,15 @@ function App() {
   function toque() {
     const synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
     const now = Tone.now();
-    synth.triggerAttackRelease([numeros[0], numeros[1], numeros[2], numeros[3]], 1,now);
-    synth.triggerAttackRelease([125], .5,now+1);
-    synth.triggerAttackRelease([80], .5,now+1.5);
+    synth.triggerAttackRelease([numeros[0], numeros[1], numeros[2], numeros[3]], 1, now);
+    synth.triggerAttackRelease([125], .5, now + 1);
+    synth.triggerAttackRelease([80], .5, now + 1.5);
     const analyser = new Tone.Analyser('waveform', 1024);
     synth.connect(analyser);
 
     visualize(analyser);
   }
-  
+
   function visualize(analyser: Tone.Analyser) {
     const svg = d3.select(svgRef.current);
     const width = +svg.attr('width');
@@ -60,7 +62,9 @@ function App() {
   };
   return (
     <>
+
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+        <Home />
         {numeros.map((numero, index) => (
           <div key={index}>
             <input
