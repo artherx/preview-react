@@ -67,13 +67,13 @@ function App() {
       <Home />
       <div className='flex flex-col items-center justify-evenly h-screen'>
         {numeros.map((numero, index) => (
-          <div key={index}>
+          
             <input className={`${styles.intup}`}
               type="number"
+              key={String(numero)}
               value={numero}
               onChange={handleChange(index)}
             />
-          </div>
         ))}
         <button onClick={toque} className={`${styles.button}`}>Click</button>
         <svg ref={svgRef} width="800" height="400"></svg>

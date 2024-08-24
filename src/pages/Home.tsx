@@ -7,6 +7,7 @@ export default function Home() {
                 <Link to="/" className={`${styles.link}`}>Home</Link>
                 <Link to="/app" className={`${styles.link}`}>APP</Link>
                 <Link to="/trabajo" className={`${styles.link}`}>Trabajo</Link>
+                <Link to="/list" className={`${styles.link}`}>Listado</Link>
             </header>
         </>
     );
